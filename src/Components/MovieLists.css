@@ -1,0 +1,84 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.container
+{
+    background-color: #c5c1c1;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;    
+    padding: 2em 4em;
+}
+.movieCard
+{   
+    width: 15em;
+    margin-top: 2em;
+    /* background-color: rgb(244, 222, 222); */
+    background-color: #fff;
+    margin: 2em 0.5em 2em 0.5em;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.poster
+{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 15em;
+    height: auto
+}
+.overview
+{
+    display: flex;
+    flex-direction: column;
+}
+.row1
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em;
+    height: 1.5em;
+    /* flex: 2 1 auto; */
+}
+.row2
+{
+    padding-top: 0.5em;
+}
+.title
+{
+    /* text-align: left;     */
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 80%;
+    /* padding-right: 0.5em; */
+
+}
+.star
+{
+    height: 1em;
+}
+.rating
+{
+    font-size: 0.8em;
+    font-weight: bold;
+    position: relative;
+    left: 0.2em;
+    bottom: 0.2em;
+}
+.desc
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* // Addition lines for 2 line or multiline ellipsis */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    font-size: 0.8em;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    margin-block-start: 0.1 !important;
+}
