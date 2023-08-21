@@ -1,0 +1,53 @@
+.navbar1
+{
+    display: block;
+    height: 10vh;
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.search
+{
+    width: 1.5em;
+    position: absolute;
+    left: 7%;
+    top: 32%;
+    z-index: 2;
+}
+.cancel
+{
+    width: 1.5em;
+    position: absolute;
+    right: 61%;
+    top: 32%;
+    z-index: 2;
+}
+.search-input
+{
+    height:2.5em;
+    width: 30vw;
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    background-color: #ede7e7;
+    border: none;
+    border-radius: 8px;
+    padding-left: 5%;
+    font-size: 1em;
+    font-weight: 400;
+    
+}
+
+.search-input:active
+{
+    border: none- !important;
+}
+.home
+{
+    width: 2em;
+    position:absolute;
+    right: 3%;
+    top:25%
+}

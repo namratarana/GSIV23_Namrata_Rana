@@ -1,11 +1,13 @@
 body
 {
+    width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
-
+    margin: 0 !important;
+    overflow-x: hidden;
 }
 .container
 {
-    background-color: #c5c1c1;
+    background-color: white;
     height: auto;
     display: flex;
     flex-direction: row;
