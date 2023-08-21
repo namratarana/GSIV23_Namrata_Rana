@@ -6,13 +6,13 @@ import Navbar1 from './Navbar1';
 
 const MovieLists = ()=>
 {
-    const config = {
+    const [config] = useState({
         headers:
         {
             accept: 'application/json',
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjdiMjJiN2EyYmI4ZmM1MTA0NTc5OWI0NzNmMmFmYyIsInN1YiI6IjY0ZGZkNDgzYjc3ZDRiMTE0MjVmYzBiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YEvuWaNorrv-cPEj9hc07hKbRDCZ5WKSEo3m9xtdMJI'
         }
-      };
+      });
     const [results, setResults] = useState([]);
     const[searchvalue, setSearchvalue] = useState("");
     const [cancel, setCancel] = useState(false);
@@ -39,7 +39,7 @@ const MovieLists = ()=>
             axios.get("https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1", config)
             .then(res =>
                 {
-                    // console.log((res.data.results));
+                    console.log((res.data.results));
                     setResults(res.data.results);
                 })
             .catch(err =>{
