@@ -26,10 +26,12 @@ const MovieDetails = ()=>
     const[director,setDirector] = useState("Ben Wheatley");
     const[cast, setCast] = useState([]);
 
-    useEffect(()=>
+     useEffect(()=>
+    {
+    async function fetchData()
     {
         console.log("fetching cast and director");
-        axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`, config)
+        await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`, config)
         .then(res=>
         {
             // console.log("cast data: ",res.data.cast);
@@ -61,7 +63,7 @@ const MovieDetails = ()=>
             {
                 console.log("there was an error");
             })
-    }, [id, config])
+    } fetchData()}, [id, config])
 
     useEffect(()=>
     {
