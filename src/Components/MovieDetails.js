@@ -3,7 +3,8 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import '../Components/MovieDetails.css';
 import star from '../Images/star.png';
-import Navbar2 from './Navbar2';
+import Navbar2 from './Navbar2.js';
+// const axios = require('axios');
 
 const MovieDetails = ()=>
 {
@@ -37,6 +38,8 @@ const MovieDetails = ()=>
 
                     if(cast.known_for_department === "Acting")
                         return cast.name;
+                    else
+                        return "";
                 }).slice(0,15)
             // console.log("filter:", filteredCast);
             setCast(filteredCast);
@@ -47,6 +50,8 @@ const MovieDetails = ()=>
                     // console.log("job", crew);
                     if(crew.job === "Director")
                         return crew.name;
+                    else    
+                        return "";
                 })
             // console.log("filter director:", filteredDirector);
             setDirector(filteredDirector);

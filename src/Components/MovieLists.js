@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import './MovieLists.css';
-import MovieCard from './MovieCard';
-import axios from 'axios';
-import Navbar1 from './Navbar1';
+import MovieCard from './MovieCard.js';
+import Navbar1 from './Navbar1.js';
 import Previous from '../Images/previous.png';
 import Next from '../Images/next.png';
 
