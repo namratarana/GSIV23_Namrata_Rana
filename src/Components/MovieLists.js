@@ -45,7 +45,7 @@ const MovieLists = ()=>
             .catch(err =>{
                 console.log("There was an error fetching upcoming movies lists");
             });
-        },[cancel])
+        },[cancel, config])
 
     useEffect(()=>
     {
@@ -59,7 +59,7 @@ const MovieLists = ()=>
                 console.log("There was an error fetching upcoming movies lists");
             });
         
-    }, [searchvalue])
+    }, [searchvalue, config])
     return(
         <>
         <Navbar1 fetchInput={fetchInputValue} cancelSearch={cancelSearch}/>
