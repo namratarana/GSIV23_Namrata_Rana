@@ -12,14 +12,14 @@ const MovieDetails = ()=>
     const BASE_IMG_URL = `https://image.tmdb.org/t/p/w220_and_h330_face/`;
     const NO_IMAGE_URL = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
 
-    const config = {
-        headers:
-        {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjdiMjJiN2EyYmI4ZmM1MTA0NTc5OWI0NzNmMmFmYyIsInN1YiI6IjY0ZGZkNDgzYjc3ZDRiMTE0MjVmYzBiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YEvuWaNorrv-cPEj9hc07hKbRDCZ5WKSEo3m9xtdMJI'
-        }
-      };
-
+   
+    const [config] = useState({
+    headers:
+    {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjdiMjJiN2EyYmI4ZmM1MTA0NTc5OWI0NzNmMmFmYyIsInN1YiI6IjY0ZGZkNDgzYjc3ZDRiMTE0MjVmYzBiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YEvuWaNorrv-cPEj9hc07hKbRDCZ5WKSEo3m9xtdMJI'
+    }
+    });
 
     const [length, setLength]= useState("2h 30m");
     const[director,setDirector] = useState("Ben Wheatley");
@@ -56,7 +56,7 @@ const MovieDetails = ()=>
             {
                 console.log("there was an error");
             })
-    }, [id])
+    }, [id, config])
 
     useEffect(()=>
     {
@@ -76,15 +76,16 @@ const MovieDetails = ()=>
             {
                 console.log("there was an error");
             })
-    }, [id])
+    }, [id, config])
 
     return(
         <>
             <Navbar2/>
             <div className='details-container'>
                 
-                <div className='movie-image'>
+                <div >
                     <img 
+                    className='movie-image'
                     src= {poster_path===null?`${NO_IMAGE_URL}`:`${BASE_IMG_URL}${poster_path}`} 
                     alt="loading"/>
                 </div>
@@ -109,14 +110,12 @@ const MovieDetails = ()=>
 
                     <div>
                         <h2>Cast</h2>
+                        <p className='movie-desc'>
                         {
-                            cast?.map((actor) => 
-                            {
-                                return(
-                                    <span className='movie-desc' >{actor}, </span>
-                                )
-                            })
+                            cast?.map((actor) => actor+",")
                         }
+                        </p>
+                        
                         
                     </div>
                     

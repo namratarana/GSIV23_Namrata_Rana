@@ -1,75 +1,199 @@
-body
+@media only screen and (max-width: 1800px) 
 {
-    font-family: "Source Sans Pro";
-    color: white;
+    body
+    {
+        font-family: "Source Sans Pro";
+        color: white;
+        /* overflow: hidden; */
+    }
+    .details-container
+    {
+        display: flex;
+        /* align-items: center; */
+        background:  rgba(136.5, 115.5, 115.5, 0.84);
+        height: 90vh;
+        width: 100vw;
+    }
+    .movie-image
+    {
+        height: 90%;
+        margin: 1em 1em 1em 5em;
+    }
+    .details-box
+    {
+        width: 80vw;
+        margin: 1.2em 4em auto 0.5em; 
+    }
+    .movie-title
+    {
+        font-size: 4em;
+        font-weight: bolder;
+        margin-right: 1em;
+        margin-left: 0.2em;
+    }
+    .movie-star
+    {
+        width:0.7em;
+    }
+    .movie-rating
+    {
+        font-size: 2.5em;   
+    }
 
+    ul{
+        display: flex;
+        padding-inline-start: 2em !important;
+        /* margin-top: 2em; */
+    }
+    .movie-releaseDate
+    {
+        margin-right: 2em;
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .movie-length
+    {
+        margin-right: 2em;
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .movie-director
+    {
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div h2
+    {
+        margin-left: 0.75em;
+        margin-block-start: 2em !important;
+        margin-block-end: 0.5em !important;
+        font-size: 1.4em;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(99, 80, 74);
+        
+    }
+    .movie-desc
+    {
+        margin-left: 1em;
+        margin-block-start: 0.5em !important;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+        line-height: 1.3em;
+        /* text-align: justify; */
+    }
 }
-.details-container
+@media only screen and (max-width: 992px) 
 {
-    display: flex;
-    /* align-items: center; */
-    background:  rgba(136.5, 115.5, 115.5, 0.84);
-    height: 90vh;
-    width: 100vw;
+    .movie-title
+    {
+        font-size: 2em; 
+        margin-left: 0.5em;
+    }
+    .movie-star
+    {
+        width:0.5em;
+    }
+    .movie-rating
+    {
+        font-size: 1.8em;   
+    }
+    .movie-releaseDate, .movie-length, .movie-director
+    {
+        font-size: 0.9em;
+    }
+    div h2
+    {
+        font-size: 1.2em;
+        margin-left: 1em;
+    }
+    .movie-desc
+    {
+        font-size: 0.9em;
+    }
 }
-.movie-image
+@media only screen and (max-width: 751px) 
 {
-    width: 15em;
-    height: auto;
-    margin: 1em;
-    margin-left: 6em;
+    .details-box
+    {
+        margin: 1.2em 2em auto 0.5em; 
+
+    }
+    .movie-title
+    {
+        font-size: 1.9em; 
+        margin-left: 0.5    em;
+
+    }
+    .movie-star
+    {
+        width:0.4em;
+    }
+    .movie-rating
+    {
+        font-size: 1em;   
+    }
+    .movie-releaseDate, .movie-length, .movie-director
+    {
+        font-size: 0.7em;   
+    }
+    div h2
+    {
+        font-size: 1em;
+        margin-left: 1em;
+        margin-block-start: 1em !important;
+    }
+    .movie-desc
+    {
+        font-size: 0.7em;
+        margin-left: 1.2em;
+    }
 }
-.details-box
+@media only screen and (max-width: 615px) 
 {
-    width: 80vw;
-    margin: 1.2em 6em auto 0.5em; 
-}
-.movie-title
-{
-    font-size: 4em;
-    font-weight: bolder;
-    margin-right: 1em;
-}
-.movie-star
-{
-    width:0.7em;
-}
-.movie-rating
-{
-    font-size: 2.5em;   
-}
-ul{
-    display: flex;
-    padding-inline-start: 1em !important;
-}
-.movie-releaseDate
-{
-    margin-right: 2em;
-    font-size: 1.2em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.movie-length
-{
-    margin-right: 2em;
-    font-size: 1.2em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.movie-director
-{
-    font-size: 1.2em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-div h2
-{
-    margin-block-start: 1em !important;
-    margin-block-end: 0 !important;
-    font-size: 1.4em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.movie-desc
-{
-    margin-block-start: 0.5em !important;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.1em;
-    text-align: justify;
+    .details-box
+    {
+        margin: 1.2em 2em auto 0.5em; 
+
+    }
+    .movie-image
+    {
+        margin-left: 1em;
+    }
+    .movie-star
+    {
+        width:0.5em;
+    }
+    .movie-rating
+    {
+        font-size: 1.8em;   
+    }
+    .movie-title
+    {
+        font-size: 1.9em; 
+        margin-left: 0.5    em;
+
+    }
+    .movie-star
+    {
+        width:0.5em;
+    }
+    .movie-rating
+    {
+        font-size: 1.8em;   
+    }
+    .movie-releaseDate, .movie-length, .movie-director
+    {
+        font-size: 0.7em;   
+    }
+    div h2
+    {
+        font-size: 1em;
+        margin-left: 1em;
+        margin-block-start: 1em !important;
+    }
+    .movie-desc
+    {
+        font-size: 0.7em;
+        margin-left: 1.2em;
+    }
 }
