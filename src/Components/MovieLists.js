@@ -3,6 +3,8 @@ import './MovieLists.css';
 import MovieCard from './MovieCard';
 import axios from 'axios';
 import Navbar1 from './Navbar1';
+import Previous from '../Images/previous.png';
+import Next from '../Images/next.png';
 
 const MovieLists = ()=>
 {
@@ -16,7 +18,7 @@ const MovieLists = ()=>
     const [results, setResults] = useState([]);
     const[searchvalue, setSearchvalue] = useState("");
     const [cancel, setCancel] = useState(false);
-
+    const [page, setPage] = useState(1);
     const fetchInputValue = (input)=>
     {
         console.log("input is:", input);
@@ -27,6 +29,14 @@ const MovieLists = ()=>
         console.log(cancelValue);
         setCancel(cancelValue);
     }
+    const handlePreviousClick = ()=>
+    {
+        setPage(prevpage => setPage(prevpage-1));
+    }
+    const handleNextClick = ()=>
+    {
+        setPage(prevpage => setPage(prevpage+1));
+    }
     function dateComparison(a, b) {
         const date1 = new Date(a)
         const date2 = new Date(b)
@@ -36,16 +46,19 @@ const MovieLists = ()=>
     
     useEffect(()=>
         {
-            axios.get("https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1", config)
+            axios.get(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${page}`, config)
             .then(res =>
                 {
                     console.log((res.data.results));
-                    setResults(res.data.results);
+                    setResults(res.data.results.sort(function (a, b) 
+                    {
+                        return new Date(a.release_date) - new Date(b.release_date);
+                    }));
                 })
             .catch(err =>{
                 console.log("There was an error fetching upcoming movies lists");
             });
-        },[cancel, config])
+        },[cancel, config, page])
 
     useEffect(()=>
     {
@@ -59,7 +72,7 @@ const MovieLists = ()=>
                 console.log("There was an error fetching upcoming movies lists");
             });
         
-    }, [searchvalue, config])
+    }, [searchvalue, config, page])
     return(
         <>
         <Navbar1 fetchInput={fetchInputValue} cancelSearch={cancelSearch}/>
@@ -73,6 +86,10 @@ const MovieLists = ()=>
                         )
                     })
            }
+           <div className='page-icons'>
+                <img className="previous" src={Previous} alt="loading" onClick={page!==1?handlePreviousClick : null} />
+                <img className="next" src={Next} alt="loading" onClick={handleNextClick}/>
+           </div>
         </div>
         </>
        
